@@ -41,7 +41,14 @@ function ToDoList(){
         <div>
             <div className="taskInput">
                 <h2>To Do List</h2>
-                <input type="text" value={newTask} onChange={handleInputChange} placeholder="Enter a task" />
+                <input type="text" value={newTask} 
+                onChange={handleInputChange} placeholder="Enter a task" 
+                onKeyDown={(e) => 
+                    {
+                        if (e.key === "Enter"){
+                            addTask();
+                        }
+                    }}/>
                 <button className="addBtn" onClick={addTask}>➕</button>
             </div>
             <div className="taskAdded">
